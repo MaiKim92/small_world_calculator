@@ -120,3 +120,7 @@ $('#input-hand-banish-2').on('change', updateTargetSelect);
 $('#target-calculate-btn').on('click', calculateTarget);
 
 $('#bridge-calculate-btn').on('click', calculateBridge);
+
+$('.nav-link').on('click', function() {
+    $('#calculate-result').html('');
+});
