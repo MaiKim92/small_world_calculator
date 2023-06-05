@@ -1,0 +1,94 @@
+@charset "utf-8";
+@font-face {
+    font-family: "CardName";
+    src: url("../assets/font/Yu-Gi-Oh! Matrix Regular Small Caps 1.ttf");
+}
+
+*{
+	box-sizing: border-box;
+	--bs-gutter-x: 0rem !important;
+}
+
+body {
+	background-color: rgb(43, 43, 43);
+	color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link.active {
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+}
+
+.nav-link::hover {
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+header {
+    text-align: center;
+}
+
+.banner{
+    display: block;
+    width: 100%;
+    font-size: 6vw;
+    font-family: "CardName";
+    -webkit-text-fill-color: transparent;
+    background:linear-gradient(180deg, #BF953F 40%, #FCF6BA 50%, #B38728 60%, #FBF5B7 70%, #AA771C 100%);
+    -webkit-background-clip: text;
+}
+
+.deck {
+    font-family: Courier;
+}
+
+nav ul {
+    height:200px;
+}
+
+nav ul#calculate-result {
+    height: auto;
+    max-height: 400px;
+}
+
+nav ul {
+    overflow:hidden;
+    overflow-y:scroll;
+}
+
+.tab-pane:not(.active) {
+    width: 0px !important;
+    height: 0px !important;
+}
+
+.calculator-content {
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@media only screen and (min-width: 1024px) {
+	/* For desktop: */
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+}
