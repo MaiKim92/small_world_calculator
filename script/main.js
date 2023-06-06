@@ -45,12 +45,6 @@ const updateBridgeSelect = function() {
     $('#input-bridge').html(getAsOptions(bridgeList));
 }
 
-const updateTargetSelect = function() {
-    var selectedCard = deckList.filter(card => card.id == $('#input-hand-banish-2').val())[0];
-    var bridgeList = deckList.filter(card => shareExactlyOneProperty(card, selectedCard));
-    $('#input-target').html(getAsOptions(bridgeList));
-}
-
 function getAsOptions(deckList) {
     let options = "";
     for (card of deckList) {
@@ -62,19 +56,7 @@ function getAsOptions(deckList) {
 const calculateTarget = function() {
     var result = "";
     var selectedCard = deckList.filter(card => card.id == $('#input-bridge').val())[0];
-    var targetList = deckList.filter(card => shareExactlyOneProperty(card, selectedCard) && card.id != $('#input-hand-banish-1').val());
-    for (card of targetList) {
-        result += "<li style = >";
-        result += card.name;
-        result += "</li>";
-    }
-    $('#calculate-result').html(result);
-};
-
-const calculateBridge = function() {
-    var result = "";
-    var selectedCard = deckList.filter(card => card.id == $('#input-target').val())[0];
-    var targetList = deckList.filter(card => shareExactlyOneProperty(card, selectedCard) && card.id != $('#input-hand-banish-2').val());
+    var targetList = deckList.filter(card => shareExactlyOneProperty(card, selectedCard));
     for (card of targetList) {
         result += "<li style = >";
         result += card.name;
@@ -115,12 +97,4 @@ $('#input_decklist').on('change', readDecklist);
 
 $('#input-hand-banish-1').on('change', updateBridgeSelect);
 
-$('#input-hand-banish-2').on('change', updateTargetSelect);
-
 $('#target-calculate-btn').on('click', calculateTarget);
-
-$('#bridge-calculate-btn').on('click', calculateBridge);
-
-$('.nav-link').on('click', function() {
-    $('#calculate-result').html('');
-});

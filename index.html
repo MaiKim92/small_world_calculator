@@ -67,45 +67,20 @@
             <p></p>
         </div>
         <div class = "col-md-8 row">
-            <div class = "col-12 row">
-                <ul class="nav nav-tabs" id="tab-navigator" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="target-tab" data-bs-toggle="tab" data-bs-target="#target-tab-pane" type="button" role="tab" aria-controls="target-tab-pane" aria-selected="true">Target search</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="bridge-tab" data-bs-toggle="tab" data-bs-target="#bridge-tab-pane" type="button" role="tab" aria-controls="bridge-tab-pane" aria-selected="false">Bridge search</button>
-                    </li>
-                </ul>
-            </div>
             <div class = "calculator-content col-12 row">
-                <div class="tab-pane tab-cont fade show active col-12 row" id="target-tab-pane" role="tabpanel" aria-labelledby="target-tab" tabindex="0">
-                    <div class = "col-5">
+                <div class="col-12 row" id="target-tab-pane" role="tabpanel" aria-labelledby="target-tab" tabindex="0">
+                    <div class = "col-md-5">
                         <label for = "input-hand-banish-1">Banish from hand:</label>
                         <select id = "input-hand-banish-1" class = "card-list">
                         </select>
                     </div>
-                    <div class = "col-5">
+                    <div class = "col-md-5">
                         <label for = "input-bridge">Banish from deck:</label>
                         <select id = "input-bridge" class = "card-list">
                         </select>
                     </div>
-                    <div class = "col-2">
+                    <div class = "col-md-2">
                         <button id = "target-calculate-btn" class = "btn btn-primary">Calculate!</button>
-                    </div>
-                </div>
-                <div class="tab-pane fade col-12 row" id="bridge-tab-pane" role="tabpanel" aria-labelledby="bridge-tab" tabindex="0">
-                    <div class = "col-5">
-                        <label for = "input-hand-banish-2">Banish from hand:</label>
-                        <select id = "input-hand-banish-2" class = "card-list">
-                        </select>
-                    </div>
-                    <div class = "col-5">
-                        <label for = "input-target">Search target:</label>
-                        <select id = "input-target" class = "card-list">
-                        </select>
-                    </div>
-                    <div class = "col-2">
-                        <button id = "bridge-calculate-btn" class = "btn btn-primary">Calculate!</button>
                     </div>
                 </div>
             </div>
