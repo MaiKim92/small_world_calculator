@@ -6,7 +6,13 @@ const readDecklist = function(){
     const reader = new FileReader();
     let data = reader.readAsText(file);
     reader.addEventListener('load', (e) => {
-        let alines = e.target.result.replaceAll(' ', '').replaceAll('#main\r\n', '').replaceAll('#extra\r\n', '').replaceAll('!side\r\n', '').replaceAll('\r\n', ',');
+        let lines = e.target.result.split('\n');
+        // Remove the author because ygoprodeck doesn't support it
+        if (lines[0].includes('#created by')) {
+            lines.splice(0, 1);
+        }
+        let realLines = lines.join('\n');
+        let alines = realLines.replaceAll(' ', '').replaceAll('#main\r\n', '').replaceAll('#extra\r\n', '').replaceAll('!side\r\n', '').replaceAll('\r\n', ',');
         alines = alines.substring(0, alines.length - 1);
         $.getJSON('https://db.ygoprodeck.com/api/v7/cardinfo.php?id=' + alines)
         .then(function(response) {
