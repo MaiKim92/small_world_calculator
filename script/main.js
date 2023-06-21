@@ -16,6 +16,7 @@ const readDecklist = function(){
         alines = alines.substring(0, alines.length - 1);
         $.getJSON('https://db.ygoprodeck.com/api/v7/cardinfo.php?id=' + alines)
         .then(function(response) {
+            deckList = [];
             for(data of response.data) {
                 if (data.frameType === 'normal' || data.frameType === 'effect') {
                     deckList.push({
